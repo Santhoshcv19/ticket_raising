@@ -4,7 +4,7 @@ version: 0.0.1
 homepage: https://github.com/Santhoshcv19/ticket_raising
 
 environment:
-  sdk: '>=3.4.1 <4.0.0'
+  sdk: '>=3.0.0 <4.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
