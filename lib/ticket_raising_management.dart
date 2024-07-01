@@ -13,7 +13,7 @@ import 'package:ticket_raising_management/core/routes/route_name.dart';
 import 'package:ticket_raising_management/core/routes/routes.dart';
 import 'package:ticket_raising_management/core/styles/theme.style.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+// import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:ticket_raising_management/core/utils/url.dart';
 import 'package:ticket_raising_management/services/provider.dart';
 
@@ -165,11 +165,11 @@ class _TicketManagementState extends ConsumerState<TicketManagement> {
           unknownRoute: Routes.route,
           supportedLocales: L10n.all,
           locale: appController.locale,
-          localizationsDelegates: const [
-            GlobalMaterialLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-          ],
+          // localizationsDelegates: const [
+          //   GlobalMaterialLocalizations.delegate,
+          //   GlobalCupertinoLocalizations.delegate,
+          //   GlobalWidgetsLocalizations.delegate,
+          // ],
         );
       },
     );
