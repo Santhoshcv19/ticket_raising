@@ -17,6 +17,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:ticket_raising_management/core/utils/url.dart';
 import 'package:ticket_raising_management/services/provider.dart';
 
+export 'ticket_raising_management.dart';
+
 class TicketManagement extends ConsumerStatefulWidget {
   final String userId;
   final String organizationId;
