@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ticket_raising_management/core/common/domain/entity/user.entity.dart';
 
-final AppDataController appController = Get.put(AppDataController());
+final TRMAppDataController appController = Get.put(TRMAppDataController());
 
-class AppDataController extends GetxController {
+class TRMAppDataController extends GetxController {
   UserEntity? _user;
   Locale _locale = const Locale('en');
 
