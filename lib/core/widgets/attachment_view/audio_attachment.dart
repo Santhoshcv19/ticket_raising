@@ -82,7 +82,7 @@ class _AudioAttachmentState extends ConsumerState<AudioAttachment> {
         const Spacer(),
         IconButton.filledTonal(
           style: ButtonStyle(
-            backgroundColor: WidgetStatePropertyAll(AppColors.grey300),
+            backgroundColor: MaterialStatePropertyAll(AppColors.grey300),
           ),
           onPressed: () async {
             if (!isplaying) return await _audioPlayer.play();

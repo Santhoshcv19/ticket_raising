@@ -29,7 +29,7 @@ class ManualChip extends ConsumerWidget {
       avatar: leadIcon,
       label: Text(label),
       labelStyle: textStyle?.copyWith(color: kFontColor),
-      color: WidgetStatePropertyAll(color),
+      color: MaterialStatePropertyAll(color),
       shape: RoundedRectangleBorder(
         borderRadius: radius32,
         side: BorderSide(color: color ?? AppColors.white, width: 1),

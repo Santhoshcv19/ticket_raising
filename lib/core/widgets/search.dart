@@ -27,13 +27,13 @@ class AppSearchBar extends ConsumerWidget {
 
     return SearchAnchor.bar(
       searchController: controller,
-      barPadding: const WidgetStatePropertyAll(Dimen.textMargin),
-      barElevation: const WidgetStatePropertyAll(0),
+      barPadding: const MaterialStatePropertyAll(Dimen.textMargin),
+      barElevation: const MaterialStatePropertyAll(0),
       viewElevation: 0,
-      barBackgroundColor: WidgetStatePropertyAll(color),
+      barBackgroundColor: MaterialStatePropertyAll(color),
       viewBackgroundColor: color,
       viewShape: const RoundedRectangleBorder(),
-      barShape: WidgetStatePropertyAll(RoundedRectangleBorder(
+      barShape: MaterialStatePropertyAll(RoundedRectangleBorder(
         borderRadius: radius8,
         side: BorderSide(width: 1.5, color: AppColors.grey300),
       )),

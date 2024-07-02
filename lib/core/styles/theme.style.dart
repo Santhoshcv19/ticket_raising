@@ -57,7 +57,7 @@ class AppThemeData {
     listTileTheme: const ListTileThemeData(textColor: AppColors.white),
     iconButtonTheme: IconButtonThemeData(
       style: ButtonStyle(
-        iconColor: WidgetStatePropertyAll<Color>(AppColors.grey300),
+        iconColor: MaterialStatePropertyAll<Color>(AppColors.grey300),
       ),
     ),
     bottomSheetTheme: const BottomSheetThemeData(
