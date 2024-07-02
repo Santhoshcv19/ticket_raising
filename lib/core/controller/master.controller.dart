@@ -1,9 +1,10 @@
 import 'package:get/get.dart';
 import 'package:ticket_raising_management/core/common/domain/entity/master.entity.dart';
 
-final DataMastersController masterController = Get.put(DataMastersController());
+final TRMDataMastersController masterController =
+    Get.put(TRMDataMastersController());
 
-class DataMastersController extends GetxController {
+class TRMDataMastersController extends GetxController {
   List<MasterEntity> _priority = [];
   List<MasterEntity> _ticketStatus = [];
   List<MasterEntity> _category = [];
