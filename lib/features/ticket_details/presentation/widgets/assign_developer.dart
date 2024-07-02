@@ -1,7 +1,7 @@
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ticket_raising_management/core/controller/master.controller.dart';
+import 'package:ticket_raising_management/core/controller/master.controller.dart' as trm;
 import 'package:ticket_raising_management/core/controller/rights.controller.dart';
 import 'package:ticket_raising_management/core/styles/border_radius.style.dart';
 import 'package:ticket_raising_management/core/styles/colors.style.dart';
@@ -28,7 +28,7 @@ class AssignDeveloper extends ConsumerWidget {
       Expanded(
         child: DropdownSearch<String?>(
           enabled: hasRights && !isLocked,
-          items: masterController.users.map((e) {
+          items: trm.masterController.users.map((e) {
             return e.value;
           }).toList(),
           dropdownDecoratorProps: DropDownDecoratorProps(
@@ -47,7 +47,7 @@ class AssignDeveloper extends ConsumerWidget {
             ),
           ),
           onChanged: (value) async {
-            final master = masterController.users.firstWhere(
+            final master = trm.masterController.users.firstWhere(
               (e) => e.value == value,
             );
 
@@ -58,7 +58,7 @@ class AssignDeveloper extends ConsumerWidget {
 
             await notifier.updateTechAssigned(params);
           },
-          selectedItem: masterController.parseUser(
+          selectedItem: trm.masterController.parseUser(
             data?.technicalAssingned,
           ),
         ),

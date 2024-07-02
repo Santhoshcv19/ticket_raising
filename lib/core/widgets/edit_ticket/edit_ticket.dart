@@ -6,7 +6,7 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:ticket_raising_management/core/common/domain/entity/ticket.entity.dart';
 import 'package:ticket_raising_management/core/common/logic/provider.dart';
 import 'package:ticket_raising_management/core/controller/app_data.controller.dart';
-import 'package:ticket_raising_management/core/controller/master.controller.dart';
+import 'package:ticket_raising_management/core/controller/master.controller.dart' as trm;
 import 'package:ticket_raising_management/core/styles/border_radius.style.dart';
 import 'package:ticket_raising_management/core/styles/colors.style.dart';
 import 'package:ticket_raising_management/core/styles/dimenstions.style.dart';
@@ -82,9 +82,9 @@ class _EditTicketState extends ConsumerState<EditTicket> {
     int sla = 0;
     // int sla = masterController.priority.firstWhere((provider.priority) => );
 
-    for (int i = 0; i <= masterController.priority.length; i++) {
-      if (provider.priority == masterController.priority[i].masterId) {
-        sla = masterController.priority[i].slaTime ?? 0;
+    for (int i = 0; i <= trm.masterController.priority.length; i++) {
+      if (provider.priority == trm.masterController.priority[i].masterId) {
+        sla = trm.masterController.priority[i].slaTime ?? 0;
       }
     }
 
@@ -166,7 +166,7 @@ class _EditTicketState extends ConsumerState<EditTicket> {
           const AppSubCaptionText(data: 'TYPE'),
           const SizedBox(height: Dimen.space),
           CreateTicketDropdown(
-            items: masterController.type,
+            items: trm.masterController.type,
             value: logic.type,
             flex: 2,
             onChanged: provider.onType,
@@ -204,7 +204,7 @@ class _EditTicketState extends ConsumerState<EditTicket> {
           const SizedBox(height: Dimen.space * 2),
           const AppSubCaptionText(data: 'PRIORITY'),
           CreateTicketDropdown(
-            items: masterController.priority,
+            items: trm.masterController.priority,
             value: logic.priority,
             onChanged: provider.onPriority,
           ),
@@ -212,7 +212,7 @@ class _EditTicketState extends ConsumerState<EditTicket> {
           const AppSubCaptionText(data: 'CATEGORY'),
           const SizedBox(height: Dimen.space),
           CreateTicketDropdown(
-            items: masterController.category,
+            items: trm.masterController.category,
             value: logic.category,
             onChanged: provider.onCategory,
           ),
@@ -220,7 +220,7 @@ class _EditTicketState extends ConsumerState<EditTicket> {
           const AppSubCaptionText(data: 'TECHNICAL ASSIGNED'),
           const SizedBox(height: Dimen.space),
           CreateTicketDropdown(
-            items: masterController.users,
+            items: trm.masterController.users,
             value: logic.techAssigned,
             flex: 2,
             onChanged: provider.onTechAssigned,
@@ -229,7 +229,7 @@ class _EditTicketState extends ConsumerState<EditTicket> {
           const AppSubCaptionText(data: 'CLIENT'),
           const SizedBox(height: Dimen.space),
           CreateTicketDropdown(
-            items: masterController.client,
+            items: trm.masterController.client,
             value: logic.client,
             flex: 2,
             onChanged: provider.onclient,

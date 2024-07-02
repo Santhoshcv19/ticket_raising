@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 
 import 'package:ticket_raising_management/core/common/logic/provider.dart';
 import 'package:ticket_raising_management/core/controller/app_data.controller.dart';
-import 'package:ticket_raising_management/core/controller/master.controller.dart';
+import 'package:ticket_raising_management/core/controller/master.controller.dart' as trm;
 import 'package:ticket_raising_management/core/styles/border_radius.style.dart';
 import 'package:ticket_raising_management/core/styles/colors.style.dart';
 import 'package:ticket_raising_management/core/styles/dimenstions.style.dart';
@@ -122,7 +122,7 @@ class _HmsAddTicketState extends ConsumerState<HmsAddTicket> {
           const AppSubCaptionText(data: 'TYPE'),
           const SizedBox(height: Dimen.space),
           CreateTicketDropdown(
-            items: masterController.type,
+            items: trm.masterController.type,
             value: logic.type,
             flex: 2,
             onChanged: provider.onType,
@@ -160,7 +160,7 @@ class _HmsAddTicketState extends ConsumerState<HmsAddTicket> {
           const SizedBox(height: Dimen.space * 2),
           const AppSubCaptionText(data: 'PRIORITY'),
           CreateTicketDropdown(
-            items: masterController.priority,
+            items: trm.masterController.priority,
             value: logic.priority,
             onChanged: provider.onPriority,
           ),
@@ -168,7 +168,7 @@ class _HmsAddTicketState extends ConsumerState<HmsAddTicket> {
           const AppSubCaptionText(data: 'CATEGORY'),
           const SizedBox(height: Dimen.space),
           CreateTicketDropdown(
-            items: masterController.category,
+            items: trm.masterController.category,
             value: logic.category,
             onChanged: provider.onCategory,
           ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ticket_raising_management/core/controller/master.controller.dart';
+import 'package:ticket_raising_management/core/controller/master.controller.dart' as trm;
 import 'package:ticket_raising_management/core/styles/colors.style.dart';
 import 'package:ticket_raising_management/core/styles/dimenstions.style.dart';
 import 'package:ticket_raising_management/core/utils/extensions/datetime.extension.dart';
@@ -86,13 +86,13 @@ class _HmsTicketSheetState extends ConsumerState<HmsTicketSheet> {
               Expanded(
                 child: Content(
                   title: 'WORKER',
-                  body: masterController.parseUser(data.technicalAssingned),
+                  body: trm.masterController.parseUser(data.technicalAssingned),
                 ),
               ),
               Expanded(
                 child: Content(
                   title: 'CATEGORY',
-                  body: masterController.parseCategory(data.category),
+                  body: trm.masterController.parseCategory(data.category),
                 ),
               ),
             ]),
@@ -101,7 +101,7 @@ class _HmsTicketSheetState extends ConsumerState<HmsTicketSheet> {
               Expanded(
                 child: Content(
                   title: 'PRIORITY',
-                  body: masterController.parsePriority(data.priority),
+                  body: trm.masterController.parsePriority(data.priority),
                 ),
               ),
               Expanded(
@@ -113,7 +113,7 @@ class _HmsTicketSheetState extends ConsumerState<HmsTicketSheet> {
               Expanded(
                 child: Content(
                   title: 'CHANNEL',
-                  body: masterController.parseChannel(data.channel),
+                  body: trm.masterController.parseChannel(data.channel),
                 ),
               ),
               Expanded(

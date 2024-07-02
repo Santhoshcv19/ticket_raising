@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';
 import 'package:ticket_raising_management/core/alerts/confirm_alert.dart';
-import 'package:ticket_raising_management/core/controller/master.controller.dart';
+import 'package:ticket_raising_management/core/controller/master.controller.dart' as trm;
 import 'package:ticket_raising_management/core/controller/rights.controller.dart';
 import 'package:ticket_raising_management/core/routes/route_name.dart';
 import 'package:ticket_raising_management/core/styles/border_radius.style.dart';
@@ -152,13 +152,13 @@ class _DetailsSheetState extends ConsumerState<DetailsSheet> {
                   Expanded(
                     child: Content(
                       title: 'WORKER',
-                      body: masterController.parseUser(data.technicalAssingned),
+                      body: trm.masterController.parseUser(data.technicalAssingned),
                     ),
                   ),
                   Expanded(
                     child: Content(
                       title: 'CATEGORY',
-                      body: masterController.parseCategory(data.category),
+                      body: trm.masterController.parseCategory(data.category),
                     ),
                   ),
                 ]),
@@ -167,7 +167,7 @@ class _DetailsSheetState extends ConsumerState<DetailsSheet> {
                   Expanded(
                     child: Content(
                       title: 'PRIORITY',
-                      body: masterController.parsePriority(data.priority),
+                      body: trm.masterController.parsePriority(data.priority),
                     ),
                   ),
                   Expanded(
@@ -179,7 +179,7 @@ class _DetailsSheetState extends ConsumerState<DetailsSheet> {
                   Expanded(
                     child: Content(
                       title: 'CHANNEL',
-                      body: masterController.parseChannel(data.channel),
+                      body: trm.masterController.parseChannel(data.channel),
                     ),
                   ),
                 ]),

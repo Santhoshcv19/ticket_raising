@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:ticket_raising_management/core/common/data/model/ticket_model.dart';
-import 'package:ticket_raising_management/core/controller/master.controller.dart';
+import 'package:ticket_raising_management/core/controller/master.controller.dart' as trm;
 import 'package:get/get.dart';
 import 'package:ticket_raising_management/core/utils/utils.dart';
 // import 'package:ticket_raising_management/features/users/data/model/user.model.dart';
@@ -296,7 +296,7 @@ class FirebaseServiceImpl implements FirebaseService {
       final query = _ticketCollection.where('client', isEqualTo: id);
 
       final client =
-          masterController.client.firstWhereOrNull((e) => e.masterId == id);
+          trm.masterController.client.firstWhereOrNull((e) => e.masterId == id);
       final String code =
           (client?.value?.toUpperCase() ?? 'UNK').substring(0, 3);
 

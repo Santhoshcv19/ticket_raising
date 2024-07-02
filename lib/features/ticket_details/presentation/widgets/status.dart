@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ticket_raising_management/core/common/logic/provider.dart';
 import 'package:ticket_raising_management/core/common/params/status_params.dart';
-import 'package:ticket_raising_management/core/controller/master.controller.dart';
+import 'package:ticket_raising_management/core/controller/master.controller.dart' as trm;
 import 'package:ticket_raising_management/core/controller/rights.controller.dart';
 import 'package:ticket_raising_management/core/styles/border_radius.style.dart';
 import 'package:ticket_raising_management/core/styles/colors.style.dart';
@@ -31,12 +31,12 @@ class ActionStatus extends ConsumerWidget {
 
     final bool isLocked = data?.lock?.lockedBy != null;
 
-    final d = masterController.ticketStatus.firstWhere(
+    final d = trm.masterController.ticketStatus.firstWhere(
       (e) => e.masterId == data?.ticketStatus,
     );
 
     return KCard(
-      color: _color[masterController.ticketStatus.indexOf(d)],
+      color: _color[trm.masterController.ticketStatus.indexOf(d)],
       borderRadius: radius32,
       padding: Dimen.textMargin,
       child: PopupMenuButton(
@@ -68,7 +68,7 @@ class ActionStatus extends ConsumerWidget {
           );
           await notfier.changeStatus(params);
         },
-        itemBuilder: (context) => masterController.ticketStatus.map((e) {
+        itemBuilder: (context) => trm.masterController.ticketStatus.map((e) {
           return PopupMenuItem(
             value: e.masterId,
             child: AppBodyText(data: e.value),
@@ -76,7 +76,7 @@ class ActionStatus extends ConsumerWidget {
         }).toList(),
         child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           AppSubBodyText(
-            data: masterController.parseStatus(data?.ticketStatus),
+            data: trm.masterController.parseStatus(data?.ticketStatus),
             color: AppColors.white,
           ),
           const Icon(Icons.keyboard_arrow_down, color: AppColors.white)

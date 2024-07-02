@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ticket_raising_management/core/common/domain/entity/ticket.entity.dart';
 import 'package:ticket_raising_management/core/common/logic/provider.dart';
 import 'package:ticket_raising_management/core/common/params/status_params.dart';
-import 'package:ticket_raising_management/core/controller/master.controller.dart';
+import 'package:ticket_raising_management/core/controller/master.controller.dart' as trm;
 import 'package:ticket_raising_management/core/controller/rights.controller.dart';
 import 'package:ticket_raising_management/core/styles/border_radius.style.dart';
 import 'package:ticket_raising_management/core/styles/colors.style.dart';
@@ -41,7 +41,7 @@ class StatusDropdown extends ConsumerWidget {
             iconSize: Dimen.icon * .75,
             iconEnabledColor: AppColors.grey,
             value: data?.ticketStatus,
-            items: masterController.ticketStatus.map((e) {
+            items: trm.masterController.ticketStatus.map((e) {
               return DropdownMenuItem<int>(
                 value: e.masterId,
                 child: Text(

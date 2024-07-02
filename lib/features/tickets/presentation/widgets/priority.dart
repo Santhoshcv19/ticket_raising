@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ticket_raising_management/core/controller/master.controller.dart';
+import 'package:ticket_raising_management/core/controller/master.controller.dart' as trm;
 import 'package:ticket_raising_management/core/styles/colors.style.dart';
 import 'package:ticket_raising_management/core/widgets/container.dart';
 
@@ -11,7 +11,7 @@ class TicketPriority extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final priority = masterController.parsePriority(data);
+    final priority = trm.masterController.parsePriority(data);
 
     if (priority == 'High') {
       return CommonContainer(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ticket_raising_management/core/controller/master.controller.dart';
+import 'package:ticket_raising_management/core/controller/master.controller.dart' as trm;
 import 'package:ticket_raising_management/core/providers/providers.dart';
 import 'package:ticket_raising_management/core/styles/colors.style.dart';
 import 'package:ticket_raising_management/core/styles/dimenstions.style.dart';
@@ -29,21 +29,21 @@ class OtherDetails extends ConsumerWidget {
         const AppCaptionText(data: 'TYPE'),
         const SizedBox(height: Dimen.space * .5),
         ManualChip(
-          label: masterController.parseType(data?.type),
+          label: trm.masterController.parseType(data?.type),
           color: AppColors.lightIndigo,
         ),
         const SizedBox(height: Dimen.space * 2),
         const AppCaptionText(data: 'CATEGORY'),
         const SizedBox(height: Dimen.space * .5),
         ManualChip(
-          label: masterController.parseCategory(data?.category),
+          label: trm.masterController.parseCategory(data?.category),
           color: AppColors.lightBlue,
         ),
         const SizedBox(height: Dimen.space * 2),
         const AppCaptionText(data: 'CLIENT'),
         const SizedBox(height: Dimen.space * .5),
         ManualChip(
-          label: masterController.parseClient(data?.client),
+          label: trm.masterController.parseClient(data?.client),
           color: AppColors.lightIndigo,
         ),
         const SizedBox(height: Dimen.space * 2),
