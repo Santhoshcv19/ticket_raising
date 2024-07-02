@@ -6,7 +6,8 @@ import 'package:ticket_raising_management/core/common/domain/entity/master.entit
 import 'package:ticket_raising_management/core/common/domain/entity/user.entity.dart';
 import 'package:ticket_raising_management/core/constants/app.constants.dart';
 import 'package:ticket_raising_management/core/controller/app_data.controller.dart';
-import 'package:ticket_raising_management/core/controller/master.controller.dart';
+import 'package:ticket_raising_management/core/controller/master.controller.dart'
+    as trm;
 import 'package:ticket_raising_management/core/l10n/l10n.dart';
 import 'package:ticket_raising_management/core/providers/providers.dart';
 import 'package:ticket_raising_management/core/routes/route_name.dart';
@@ -54,7 +55,7 @@ class _TicketManagementState extends ConsumerState<TicketManagement> {
     // final complaintCategory = stream['complaint'];
     final masters = stream['masters'];
 
-    masterController.setMasterStatus = const [
+    trm.masterController.setMasterStatus = const [
       MasterEntity(masterId: 1, value: 'Active'),
       MasterEntity(masterId: 2, value: 'Inactive'),
     ];
@@ -68,25 +69,25 @@ class _TicketManagementState extends ConsumerState<TicketManagement> {
     priority?.listen((event) {
       final docs = event.docs;
       final list = docs.map((e) => MasterModel.fromJson(e)).toList();
-      masterController.setPriority = list;
+      trm.masterController.setPriority = list;
     });
 
     ticketStatus?.listen((event) {
       final docs = event.docs;
       final list = docs.map((e) => MasterModel.fromJson(e)).toList();
-      masterController.setTicketStatus = list;
+      trm.masterController.setTicketStatus = list;
     });
 
     category?.listen((event) {
       final docs = event.docs;
       final list = docs.map((e) => MasterModel.fromJson(e)).toList();
-      masterController.setCategory = list;
+      trm.masterController.setCategory = list;
     });
 
     type?.listen((event) {
       final docs = event.docs;
       final list = docs.map((e) => MasterModel.fromJson(e)).toList();
-      masterController.setType = list;
+      trm.masterController.setType = list;
     });
 
     // channel?.listen((event) {
@@ -98,7 +99,7 @@ class _TicketManagementState extends ConsumerState<TicketManagement> {
     masters?.listen((event) {
       final docs = event.docs;
       final list = docs.map((e) => MasterModel.fromJson(e)).toList();
-      masterController.setMasters = list;
+      trm.masterController.setMasters = list;
     });
   }
 
@@ -135,7 +136,7 @@ class _TicketManagementState extends ConsumerState<TicketManagement> {
     }
 
     ref.read(clientProvider.notifier).setClients = sourceClients;
-    masterController.setClient = clients;
+    trm.masterController.setClient = clients;
 
     return 0;
   }
