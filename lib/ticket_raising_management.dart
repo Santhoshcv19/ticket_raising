@@ -40,7 +40,9 @@ class TicketManagement extends ConsumerStatefulWidget {
 class _TicketManagementState extends ConsumerState<TicketManagement> {
   @override
   void initState() {
-    _fetchMasters();
+    Future.microtask(
+      () => _fetchMasters(),
+    );
     super.initState();
   }
 
